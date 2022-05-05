@@ -13,8 +13,13 @@ export const List = () => {
         setTasks((prev) => [...prev, newTask])
     }
 
+    const handleRemoveItem = (e) => {
+        const task = e.target.getAttribute("task")
+        setTasks(tasks.filter(item => item.id !== task));
+       };
+
     return (
-        <ListWrapper>
+        <ListWrapper handleRemoveItem = { handleRemoveItem }>
             <Input addTodo = { addTodo } />
 
             <TasksList>

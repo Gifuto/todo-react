@@ -1,15 +1,15 @@
-import { TaskWrapper, TaskText, DellButton } from './Task.styles'
+import { TaskWrapper, TaskText, DelButton } from './Task.styles'
 
-export const Task = ({task}) => {
+export const Task = ({ task, handleRemoveItem }) => {
     return (
         <TaskWrapper>
             <TaskText>
                 {task.text}
             </TaskText>
 
-            <DellButton>
+            <DelButton onClick={ handleRemoveItem }>
                 X
-            </DellButton>
+            </DelButton>
         </TaskWrapper>        
     )
 }

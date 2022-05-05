@@ -13,7 +13,7 @@ export const TaskText = styled.div`
     padding: 5px;
     text-align: start;
 `
-export const DellButton = styled.button`
+export const DelButton = styled.button`
     padding: 5px;
     border: none;
     background: whitesmoke;

@@ -11,7 +11,7 @@ export const Input = ( { addTodo } ) => {
         }
     }
 
-    const addButton = (e) => {
+    const addButton = () => {
         if (value !== '' && value.trim()) {
             addTodo(value.trim())
             setValue('')
@@ -28,9 +28,7 @@ export const Input = ( { addTodo } ) => {
                 onKeyDown = { handleSubmit }
             />
 
-            <AddButton onClick={ addButton }>
-                +
-            </AddButton>
+            <AddButton onClick = { addButton }> + </AddButton>
         </InputWrapper>        
     )
 }
