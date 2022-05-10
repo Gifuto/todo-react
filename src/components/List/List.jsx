@@ -6,36 +6,29 @@ import { Task } from '../Task/Task'
 
 export const List = () => {
     const [tasks, setTasks] = useState([])
-    const id = nanoid()
 
     const addTodo = (text) => {
+        const id = nanoid()
         const newTask = { id, text }
         setTasks((prev) => [...prev, newTask])
-        console.log(id)
     }
 
-    const handleRemoveItem = id => {
-        // assigning the list to temp variable
-        const temp = [...tasks];
-    
-        // removing the element using splice
-        temp.splice(id, 1);
-    
-        // updating the list
-        setTasks(temp);
-    }
-    
+    const handleRemoveItem = (id) => {
+        const taskId = id
+        setTasks(tasks.filter(item => item.id !== taskId));
+       };
 
     return (
         <ListWrapper>
             <Input addTodo = { addTodo }/>
 
             <TasksList>
-                { tasks.map((item, id) => (
+                { tasks.map((item) => (
                     <Task 
                         task = { item } 
-                        key = { id } 
+                        key = { item.id } 
                         handleRemoveItem = { handleRemoveItem }
+                        id = { item.id }
                     />
                 )) }
             </TasksList>
