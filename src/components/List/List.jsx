@@ -16,8 +16,8 @@ export const List = () => {
     const handleRemoveItem = (id) => {
         const taskId = id
         setTasks(tasks.filter(item => item.id !== taskId));
-       };
-
+       }
+       
     return (
         <ListWrapper>
             <Input addTodo = { addTodo }/>

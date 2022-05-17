@@ -4,10 +4,10 @@ export const Task = ({ task, handleRemoveItem, id }) => {
     return (
         <TaskWrapper>
             <TaskText>
-                {task.text}
+                { task.text }
             </TaskText>
 
-            <DelButton onClick={() => handleRemoveItem(id)}>
+            <DelButton onClick = { () => handleRemoveItem(id) }>
                 X
             </DelButton>
         </TaskWrapper>        
